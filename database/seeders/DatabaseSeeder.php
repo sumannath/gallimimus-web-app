@@ -21,6 +21,7 @@ class DatabaseSeeder extends Seeder
             ApplicationVersionSeeder::class,
             UserSeeder::class,
             GalSeeder::class,
+            SettingSeeder::class,
         ]);
     }
 }
