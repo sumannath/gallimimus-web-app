@@ -15,7 +15,7 @@ class HomeController extends Controller
         $data['applicationCount'] = Application::count();
         $data['configsCount']     = Gal::count();
         $data['installCount']     = $data['applicationCount'] * $data['configsCount'];
-        $data['downloadsCount']   = Setting::getValue('download_count');
+        $data['downloadsCount']   = setting('site.download_count');
         return view('home', $data);
     }
 
