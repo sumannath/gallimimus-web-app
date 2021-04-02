@@ -14,14 +14,12 @@ class DatabaseSeeder extends Seeder
     public function run()
     {
         $this->call([
-            RoleAndPermissionSeeder::class,
             ApplicationPlatformSeeder::class,
             ApplicationCategorySeeder::class,
             ApplicationSeeder::class,
             ApplicationVersionSeeder::class,
             UserSeeder::class,
             GalSeeder::class,
-            SettingSeeder::class,
         ]);
     }
 }

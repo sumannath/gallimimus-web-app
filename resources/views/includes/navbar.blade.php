@@ -4,13 +4,13 @@
     <div class="navbar-container main-menu-content container center-layout" data-menu="menu-container">
         <!-- include ../../../includes/mixins-->
         <ul class="nav navbar-nav" id="main-menu-navigation" data-menu="menu-navigation">
-            <li class="nav-item active" data-menu="">
+            <li class="nav-item @if(Request::is('/')) active @endif" data-menu="">
                 <a class="nav-link" href="{{ route('homepage') }}" data-toggle="">
                     <i class="feather icon-home"></i><span data-i18n="Dashboard">Home</span>
                 </a>               
             </li>
-            <li class="nav-item" data-menu="">
-                <a class="nav-link" href="#" data-toggle="">
+            <li class="nav-item @if(Request::is('create')) active @endif" data-menu="">
+                <a class="nav-link" href="{{ route('createPackage') }}" data-toggle="">
                     <i class="feather icon-box"></i><span data-i18n="Templates">Create a package</span>
                 </a>
             </li>

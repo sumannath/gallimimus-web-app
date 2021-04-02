@@ -31,9 +31,9 @@
                     <div class="col-12">
                         <div class="form-group text-center">
                             <!-- Floating Outline button with text -->
-                            <button type="button" class="btn btn-float btn-float-lg btn-outline-pink">
-                                <i class="fa fa-cloud-download"></i><span>Create a package now</span>
-                            </button>
+                            <a type="button" class="btn btn-float btn-float-lg btn-outline-pink" href="{{ route('createPackage') }}">
+                                <i class="feather icon-box"></i><span>Create a package now</span>
+                            </a>
                         </div>                        
                     </div>
                 </div>

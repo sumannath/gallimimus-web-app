@@ -15,6 +15,7 @@
 <script src="../../../app-assets/vendors/js/charts/chart.min.js"></script>
 <script src="../../../app-assets/vendors/js/charts/jquery.sparkline.min.js"></script>
 <script src="../../../app-assets/vendors/js/extensions/unslider-min.js"></script>
+<script src="../../../app-assets/vendors/js/forms/icheck/icheck.min.js"></script>
 <link rel="stylesheet" type="text/css" href="../../../app-assets/css/core/colors/palette-climacon.css">
 <link rel="stylesheet" type="text/css" href="../../../app-assets/fonts/simple-line-icons/style.min.css">
 <!-- END: Page Vendor JS-->
@@ -26,5 +27,5 @@
 
 <!-- BEGIN: Page JS-->
 <script src="../../../app-assets/js/scripts/ui/breadcrumbs-with-stats.js"></script>
-<script src="../../../app-assets/js/scripts/pages/dashboard-analytics.js"></script>
+<script src="../../../app-assets/js/scripts/forms/checkbox-radio.js"></script>
 <!-- END: Page JS-->
