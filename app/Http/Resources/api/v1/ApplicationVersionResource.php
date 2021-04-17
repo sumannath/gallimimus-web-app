@@ -15,7 +15,6 @@ class ApplicationVersionResource extends JsonResource
     public function toArray($request)
     {
         return [
-            'applicationName' => $this->application->name,
             'platform' => $this->platform->name,
             'version' => $this->version,
             'releaseDate' => $this->release_date,

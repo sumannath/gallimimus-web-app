@@ -10,22 +10,12 @@ class Gal extends Model
     use HasFactory;
 
     /**
-     * Get all of the items for the Gal
+     * Get all the applications for the Gal
      *
      * @return \Illuminate\Database\Eloquent\Relations\HasMany
      */
-    public function items()
+    public function applications()
     {
-        return $this->hasMany(GalItem::class);
-    }
-
-    /**
-     * The versions that belong to the Gal
-     *
-     * @return \Illuminate\Database\Eloquent\Relations\BelongsToMany
-     */
-    public function versions()
-    {
-        return $this->belongsToMany(ApplicationVersion::class, 'gal_items');
+        return $this->belongsToMany(Application::class, 'gal_applications', 'gal_id', 'application_id')->withTimestamps();
     }
 }

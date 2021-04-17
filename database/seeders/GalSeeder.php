@@ -4,7 +4,7 @@ namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
 use App\Models\Gal;
-use App\Models\GalItem;
+use App\Models\GalApplication;
 
 class GalSeeder extends Seeder
 {
@@ -16,11 +16,11 @@ class GalSeeder extends Seeder
     public function run()
     {
         Gal::create();
-        GalItem::create(['gal_id' => 1, 'application_version_id' => 3]);
-        GalItem::create(['gal_id' => 1, 'application_version_id' => 5]);
+        GalApplication::create(['gal_id' => 1, 'application_id' => 1]);
+        GalApplication::create(['gal_id' => 1, 'application_id' => 2]);
 
         Gal::create();
-        GalItem::create(['gal_id' => 2, 'application_version_id' => 1]);
-        GalItem::create(['gal_id' => 2, 'application_version_id' => 2]);
+        GalApplication::create(['gal_id' => 2, 'application_id' => 2]);
+        GalApplication::create(['gal_id' => 2, 'application_id' => 3]);
     }
 }

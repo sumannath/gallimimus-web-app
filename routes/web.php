@@ -16,6 +16,7 @@ use App\Http\Controllers\HomeController;
 
 Route::get('/', [HomeController::class, 'index'])->name('homepage');
 Route::get('/create', [HomeController::class, 'createPackage'])->name('createPackage');
+Route::post('/download', [HomeController::class, 'downloadGal'])->name('download');
 
 
 Route::group(['prefix' => 'admin'], function () {

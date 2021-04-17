@@ -4,7 +4,7 @@ namespace App\Http\Resources\api\v1;
 
 use Illuminate\Http\Resources\Json\ResourceCollection;
 
-class ApplicationVersionCollection extends ResourceCollection
+class ApplicationCollection extends ResourceCollection
 {
     /**
      * Transform the resource collection into an array.
@@ -15,8 +15,8 @@ class ApplicationVersionCollection extends ResourceCollection
     public function toArray($request)
     {
         return [
-            'versionCount' => count($this->collection),
-            'versions' => $this->collection
+            'applicationCount' => count($this->collection),
+            'applications' => $this->collection
         ];
     }
 }
