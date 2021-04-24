@@ -16,5 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 Route::prefix('v1')->namespace('App\Http\Controllers\api\v1')->group(function () {
     Route::get('allApplications', 'ApplicationController@getAppList');
-    Route::get('gals/{id}', 'GalController@getAppList');
+    Route::get('gals/{id}', 'GalController@getAppList')->name('gals.getAppList');
 });

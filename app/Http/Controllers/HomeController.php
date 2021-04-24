@@ -7,8 +7,8 @@ use Illuminate\Http\Request;
 use App\Models\Application;
 use App\Models\ApplicationCategory  ;
 use App\Models\Gal;
-use App\Models\Setting;
-use Ixudra\Curl\Facades\Curl;
+use Symfony\Component\Process\Process;
+use Illuminate\Support\Facades\Storage;
 
 class HomeController extends Controller
 {
@@ -36,8 +36,21 @@ class HomeController extends Controller
         $gal->save();
         $gal->applications()->attach($apps);
 
-        $json = Curl::to(url("api/v1/gals/{$gal->id}"))->get();
-        dd($json);
+        $fileTime = time();
+        $jsonFileName = 'appsettings.' . $fileTime . '.json';
+        $data['url'] = route('gals.getAppList',$gal->id);
+        $fileContents = json_encode($data, JSON_PRETTY_PRINT);
+        Storage::disk('local')->put($jsonFileName, $fileContents);
+        $data['settingsFile'] = $jsonFileName;
+        $data['fileTime'] = $fileTime;
 
+        $nsiFileName = 'setup.' . $fileTime . '.nsi';
+        Storage::disk('local')->put($nsiFileName, view('setup',$data)->render());
+
+        $process = new Process(['makensis', $nsiFileName]);
+        $process->setWorkingDirectory(storage_path('app'));
+        $process->run();
+
+        return Storage::disk('local')->download('gallimimus'.$fileTime.'.exe','gallimimus.exe');
     }
 }
